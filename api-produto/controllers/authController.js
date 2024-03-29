@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const NodeCache = require('node-cache');
 const User = require('../models/userModel');
+
 const cache = new NodeCache();
 const jwtSecret = process.env.JWT_SECRET;
 
