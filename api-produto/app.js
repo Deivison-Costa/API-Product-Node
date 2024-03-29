@@ -1,7 +1,7 @@
 const express = require('express');
 const conn = require('./db/conn');  
 const bodyParser = require('body-parser');
-const multer = require('multer');
+const upload = require('./configs/configUpload');
 const productRoutes = require('./routes/productRoutes');
 const authRoutes = require('./routes/authRoutes');
 
@@ -10,19 +10,6 @@ app.use(bodyParser.json());
 
 // conecta ao mongoDB
 conn();
-
-// configuração do multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './uploads'); 
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); 
-  }
-});
-
-// instancia o multer
-const upload = multer({ storage: storage });
 
 // rotas
 app.post('/upload', upload.single('image'), (req, res) => {
