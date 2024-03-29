@@ -33,7 +33,7 @@ npm test
 
 2. The server will be running at http://localhost:3000 by default.
 
-## Manual Testing
+## Manual Testing (with cURL)
 1. Register a new user:
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{"username":"your_username","password":"your_password"}" http://localhost:3000/auth/register
