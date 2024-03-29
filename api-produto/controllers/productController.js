@@ -39,7 +39,7 @@ exports.createProduct = async (req, res) => {
     });
 
     const newProduct = await product.save();
-    // Limpando o cache após criar um novo produto
+    // limpa cache após criar um novo produto
     cache.flushAll();
     res.status(201).json(newProduct);
   } catch (err) {
