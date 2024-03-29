@@ -1,5 +1,6 @@
 const Product = require('../models/productModel');
 const NodeCache = require('node-cache');
+
 const cache = new NodeCache();
 
 // retorna todos os produtos com paginação
