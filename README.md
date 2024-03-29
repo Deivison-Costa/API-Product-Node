@@ -1,6 +1,11 @@
 # Product Management API
 - This is a RESTful API for managing products, developed using Node.js and Express. It allows you to perform CRUD operations on products, authenticate users with JWT, and includes features like pagination, sorting and file uploads.
 
+## Note
+- Create an `.env` at the root of the project containing the `PORT`, `MONGODB_URI` and `JWT_SECRET` declarations.
+- Ensure to replace "your_username", "your_password", "YourTokenJWT", and "PRODUCT_ID" with appropriate values.
+- Modify the base URL or port number if your server is running on a different address.
+
 ## Installation
 1. Ensure you have Node.js and npm on your system:
 ```bash
@@ -70,10 +75,6 @@ curl -X PUT -H "Content-Type: application/json" -H "Authorization: YourTokenJWT"
 ```bash
 curl -X DELETE -H "Authorization: YourTokenJWT" http://localhost:3000/products/PRODUCT_ID
 ```
-## Note
-- Create an `.env` at the root of the project containing the `PORT`, `MONGODB_URI` and `JWT_SECRET` declarations.
-- Ensure to replace "your_username", "your_password", "YourTokenJWT", and "PRODUCT_ID" with appropriate values.
-- Modify the base URL or port number if your server is running on a different address.
 
 ## Dependencies
 
