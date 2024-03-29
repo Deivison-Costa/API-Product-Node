@@ -29,6 +29,7 @@ npm start
 ```bash
 npm test
 ```
+![ExecTests](https://github.com/Deivison-Costa/Technical-Challenge/blob/main/ExecTests.png?raw=true)
 - Note: Configure nodemon in `package.json` to start the application from app.js with `"start": "nodemon app.js"` and supertest with `"test": "jest" ` to run automated tests.
 
 2. The server will be running at http://localhost:3000 by default.
