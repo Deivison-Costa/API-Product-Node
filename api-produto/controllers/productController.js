@@ -5,8 +5,8 @@ exports.getAllProducts = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
   const skip = (page - 1) * limit;
-  const sortBy = req.query.sortBy || '_id'; // Ordenar por ID por padrão
-  const sortOrder = req.query.sortOrder || 'asc'; // Ordem ascendente por padrão
+  const sortBy = req.query.sortBy || '_id';
+  const sortOrder = req.query.sortOrder || 'asc';
 
   const sortOptions = {};
   sortOptions[sortBy] = sortOrder === 'desc' ? -1 : 1;
