@@ -79,7 +79,7 @@ curl -X DELETE -H "Authorization: YourTokenJWT" http://localhost:3000/products/P
 - **jsonwebtoken**: For generating and verifying JSON Web Tokens (JWT) used for user authentication.
 - **mongoose**: An object modeling tool for MongoDB, used for interacting with MongoDB databases.
 - **multer**: Middleware for handling multipart/form-data, primarily used for uploading files.
-- **redis**: A Node.js client for Redis, used for caching and data storage.
+- **node-cache**: A caching library for Node.js applications
 
 2. And here are the development dependencies:
 
