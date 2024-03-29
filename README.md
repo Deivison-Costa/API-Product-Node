@@ -29,7 +29,7 @@ or (to load the automated tests)
 ```bash
 npm test
 ```
-Note: Configure nodemon to start the application from app.js with `"start": "nodemon app.js"` and to run automated tests with `"test": "jest"`.
+Note: Configure `nodemon` in `package.json` to start the application from app.js with `"start": "nodemon app.js"` and `supertest` with `"test": "jest" ` to run automated tests.
 
 2. The server will be running at http://localhost:3000 by default.
 
@@ -43,7 +43,7 @@ curl -X POST -H "Content-Type: application/json" -d "{"username":"your_username"
 curl -X POST -H "Content-Type: application/json" -d "{"username":"your_username","password":"your_password"}" http://localhost:3000/auth/login
 ```
 3. Use the obtained JWT token to access protected endpoints:
-```bash
+```json
 {"token": "YourTokenJWT"}
 ```
 4. List products with pagination:
