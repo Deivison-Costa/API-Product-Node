@@ -3,15 +3,16 @@ const NodeCache = require('node-cache');
 
 const cache = new NodeCache();
 
-// retorna todos os produtos com paginação
+// retorna todos os produtos com paginação, pesquisa, e ordenação
 exports.getAllProducts = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
   const skip = (page - 1) * limit;
   const sortBy = req.query.sortBy || '_id';
   const sortOrder = req.query.sortOrder || 'asc';
+  const searchTerm = req.query.searchTerm || '';
 
-  const cacheKey = `products_${page}_${limit}_${sortBy}_${sortOrder}`;
+  const cacheKey = `products_${page}_${limit}_${sortBy}_${sortOrder}_${searchTerm}`;
   const cachedData = cache.get(cacheKey);
 
   if (cachedData) {
@@ -22,7 +23,12 @@ exports.getAllProducts = async (req, res) => {
   sortOptions[sortBy] = sortOrder === 'desc' ? -1 : 1;
 
   try {
-    const products = await Product.find().skip(skip).limit(limit).sort(sortOptions);
+    let query = {};
+    if (searchTerm) {
+      query = { $or: [{ name: { $regex: searchTerm, $options: 'i' } }, { description: { $regex: searchTerm, $options: 'i' } }] };
+    }
+    
+    const products = await Product.find(query).skip(skip).limit(limit).sort(sortOptions);
     cache.set(cacheKey, products);
     res.json(products);
   } catch (err) {
@@ -33,11 +39,14 @@ exports.getAllProducts = async (req, res) => {
 // cria um novo produto
 exports.createProduct = async (req, res) => {
   try {
-    const product = new Product({
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price
-    });
+    const { name, description, price } = req.body;
+
+    // valida se o preço é um número positivo
+    if (typeof price !== 'number' || price <= 0) {
+      return res.status(400).json({ message: 'Price must be a positive number' });
+    }
+
+    const product = new Product({ name, description, price });
 
     const newProduct = await product.save();
     // limpa cache após criar um novo produto
