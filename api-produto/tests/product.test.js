@@ -30,14 +30,6 @@ describe('Testes da API', () => {
     expect(response.status).toBe(200);
     token = response.body.token;
   });
-  // teste para listar produtos com paginação
-  it('Deve listar os produtos com paginação', async () => {
-    const response = await request(app)
-      .get('/products?page=1&limit=10')
-      .set('Authorization', `${token}`);
-    expect(response.status).toBe(200);
-    expect(response.body).toHaveLength(0); // nº esperado de produtos por página
-  });
   // teste para criar um novo produto
   it('Deve criar um novo produto', async () => {
     const response = await request(app)
@@ -58,6 +50,14 @@ describe('Testes da API', () => {
       .set('Authorization', `${token}`)
       .send({ name: 'Novo Nome', description: 'Nova Descrição', price: 29.99 });
     expect(response.status).toBe(200);
+  });
+  // teste para listar produtos com paginação
+  it('Deve listar os produtos com paginação', async () => {
+    const response = await request(app)
+      .get('/products?page=1&limit=10')
+      .set('Authorization', `${token}`);
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveLength(1); // nº esperado de produtos por página
   });
   // teste para excluir um produto
   it('Deve excluir um produto existente', async () => {
