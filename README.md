@@ -1,5 +1,5 @@
 # Product Management API
-- This is a RESTful API for managing products, developed using Node.js and Express. It allows you to perform CRUD operations on products, authenticate users with JWT, and includes features like pagination, sorting and file uploads.
+- This is a RESTful API for managing products, developed using Node.js and Express. It allows you to perform CRUD operations on products, authenticate users with JWT, and includes features like pagination, caching, sorting and file uploads.
 
 ## Note
 - Create an `.env` at the root of the project containing the `PORT`, `MONGODB_URI` and `JWT_SECRET` declarations.
