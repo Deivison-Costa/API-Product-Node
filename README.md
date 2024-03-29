@@ -48,7 +48,7 @@ curl -X POST -H "Content-Type: application/json" -d "{"username":"your_username"
 ```
 4. List products with pagination:
 ```bash
-curl -X GET -H "Authorization: YourTokenJWT" "http://localhost:3000/products?page=1&limit=10"
+curl -X GET -H "Authorization: YourTokenJWT "http://localhost:3000/products?page=1&limit=10&sortBy=name&sortOrder=asc""
 ```
 5. Create a new product:
 ```bash
