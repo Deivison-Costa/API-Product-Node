@@ -16,7 +16,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// compara a senha com a armazenada no banco de dados
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
