@@ -67,3 +67,22 @@ curl -X DELETE -H "Authorization: YourTokenJWT" http://localhost:3000/products/P
 - Create an `.env` at the root of the project containing the `PORT`, `MONGODB_URI` and `JWT_SECRET` declarations.
 - Ensure to replace "your_username", "your_password", "YourTokenJWT", and "PRODUCT_ID" with appropriate values.
 - Modify the base URL or port number if your server is running on a different address.
+
+## Dependencies
+
+1. Here are the dependencies used in the project:
+
+- **bcryptjs**: A library for hashing and salting user passwords.
+- **body-parser**: Middleware for parsing incoming request bodies in Express.js.
+- **dotenv**: Loads environment variables from a .env file into process.env.
+- **express**: Web framework for Node.js, used for building APIs and web applications.
+- **jsonwebtoken**: For generating and verifying JSON Web Tokens (JWT) used for user authentication.
+- **mongoose**: An object modeling tool for MongoDB, used for interacting with MongoDB databases.
+- **multer**: Middleware for handling multipart/form-data, primarily used for uploading files.
+- **redis**: A Node.js client for Redis, used for caching and data storage.
+
+2. And here are the development dependencies:
+
+- **jest**: A JavaScript testing framework.
+- **nodemon**: Automatically restarts the server when changes are detected in the codebase during development.
+- **supertest**: Library for testing HTTP servers, particularly useful for testing Express.js applications.
