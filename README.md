@@ -34,7 +34,7 @@ npm start
 ```bash
 npm test
 ```
-- Without caching, executing the 6 test cases took 2,888 s:
+- Without caching, executing the 6 test cases took 2,888 s (Another 5 were implemented to validate the challenge requirements):
 
 ![ExecTests](https://github.com/Deivison-Costa/Technical-Challenge/blob/main/ExecTests.png?raw=true)
 
