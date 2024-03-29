@@ -42,7 +42,7 @@ npm test
 
 ![ExecTestsCaching](https://github.com/Deivison-Costa/Technical-Challenge/blob/main/ExecTestsCaching.png?raw=true)
 
-- Another 5 were implemented to validate the challenge requirements
+- In addition to these automated tests, 5 others were later implemented to validate the challenge's requirements.
 
 - Note: Configure nodemon in `package.json` to start the application from app.js with `"start": "nodemon app.js"` and supertest with `"test": "jest" ` to run automated tests.
 
