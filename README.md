@@ -34,13 +34,15 @@ npm start
 ```bash
 npm test
 ```
-- Without caching, executing the 6 test cases took 2,888 s (Another 5 were implemented to validate the challenge requirements):
+- Without caching, executing the 6 test cases took 2,888 s:
 
 ![ExecTests](https://github.com/Deivison-Costa/Technical-Challenge/blob/main/ExecTests.png?raw=true)
 
 - With cache, executing the 6 test cases took 2,549 s (339 ms faster):
 
 ![ExecTestsCaching](https://github.com/Deivison-Costa/Technical-Challenge/blob/main/ExecTestsCaching.png?raw=true)
+
+- Another 5 were implemented to validate the challenge requirements
 
 - Note: Configure nodemon in `package.json` to start the application from app.js with `"start": "nodemon app.js"` and supertest with `"test": "jest" ` to run automated tests.
 
