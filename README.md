@@ -63,6 +63,6 @@ curl -X PUT -H "Content-Type: application/json" -H "Authorization: YourTokenJWT"
 curl -X DELETE -H "Authorization: YourTokenJWT" http://localhost:3000/products/PRODUCT_ID
 ```
 ## Note
-- Create an .env at the root of the project containing the PORT, MONGODB_URI and JWT_SECRET declarations.
+- Create an `.env` at the root of the project containing the `PORT`, `MONGODB_URI` and `JWT_SECRET` declarations.
 - Ensure to replace "your_username", "your_password", "YourTokenJWT", and "PRODUCT_ID" with appropriate values.
 - Modify the base URL or port number if your server is running on a different address.
