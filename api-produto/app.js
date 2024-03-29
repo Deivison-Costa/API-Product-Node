@@ -14,10 +14,10 @@ conn();
 // configuração do multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads'); // Pasta onde as imagens serão armazenadas
+    cb(null, './uploads'); 
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // Nome do arquivo após o upload
+    cb(null, Date.now() + '-' + file.originalname); 
   }
 });
 
